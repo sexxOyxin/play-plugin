@@ -17,7 +17,24 @@
         "command": "play-plugin.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "keybindings": [
+			{
+				"command": "play-plugin.helloWorld",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+  	"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "play-plugin.helloWorld",
+					"group": "navigation"
+				}
+			]
+		}
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
