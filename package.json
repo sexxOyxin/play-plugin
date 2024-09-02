@@ -14,27 +14,37 @@
   "contributes": {
     "commands": [
       {
-        "command": "play-plugin.helloWorld",
+        "command": "helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "getFileSize",
+        "title": "Flie Size"
       }
     ],
-    "keybindings": [
+		"keybindings": [
 			{
-				"command": "play-plugin.helloWorld",
+				"command": "getFileSize",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
-				"when": "editorTextFocus"
+				"when": "editorFocus"
 			}
 		],
-  	"menus": {
-			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "play-plugin.helloWorld",
-					"group": "navigation"
-				}
-			]
-		}
+    "menus": {
+      "explorer/context": [
+        {
+            "command": "getFileSize",
+            "group": "navigation"
+        }
+    ],
+    "editor/context": [
+      {
+          "when": "editorFocus",
+          "command": "getFileSize",
+          "group": "navigation"
+      }
+  ]
+  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
